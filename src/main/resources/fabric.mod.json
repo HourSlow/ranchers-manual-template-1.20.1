@@ -10,7 +10,7 @@
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/project/ranchers-manual",
-		"sources": ""
+		"sources": "https://github.com/HourSlow/ranchers-manual-template-1.20.1"
 	},
 	"license": "ARR",
 	"icon": "assets/rancher/icon.png",
