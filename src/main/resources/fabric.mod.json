@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "rancher",
+	"version": "${version}",
+	"name": "Rancher's Manual",
+	"description": "Rancher's Manual aims to add more content to cooking and farming!",
+	"authors": [
+		"HourSlow",
+        "Grae2016"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/project/ranchers-manual",
+		"sources": ""
+	},
+	"license": "ARR",
+	"icon": "assets/rancher/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.hour.rancher.RanchersManual"
+		],
+      "client": [
+        "net.hour.rancher.RanchersManualClient"
+      ],
+		"fabric-datagen": [
+			"net.hour.rancher.RanchersManualDataGenerator"
+		]
+	},
+	"mixins": [
+		"rancher.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
