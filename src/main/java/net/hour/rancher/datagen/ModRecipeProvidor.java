@@ -25,11 +25,13 @@ public class ModRecipeProvidor extends FabricRecipeProvider {
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING,70, Items.BREAD, ModItems.TOAST, 0.2f);
+
+        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING,90, Items.EGG, ModItems.FRIED_EGG, 0.2f);
         offerSmelting(exporter, LIST_EGGS, RecipeCategory.FOOD, ModItems.FRIED_EGG, 0.2f, 90, "rancher");
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.CORN_STEW, 1)
                 .pattern("CCC")
-                .pattern("-B-")
+                .pattern(" B ")
                 .input('B', Items.BOWL)
                 .input('C', ModItems.CORN)
                 .criterion(hasItem(ModItems.CORN), conditionsFromItem(ModItems.CORN))

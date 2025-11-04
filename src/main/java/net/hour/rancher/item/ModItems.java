@@ -13,7 +13,6 @@ import net.minecraft.util.Identifier;
 public class ModItems {
 
 
-
     public static final Item TOAST = registerItem("toast",
             new Item(new FabricItemSettings().food(ModFoodComponents.TOAST)));
 
