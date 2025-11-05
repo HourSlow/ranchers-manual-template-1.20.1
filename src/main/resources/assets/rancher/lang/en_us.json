@@ -6,5 +6,8 @@
   "item.rancher.corn_seeds": "Corn Seeds",
   "item.rancher.corn_stew": "Corn Stew",
 
+  "block.rancher.corn": "Corn Crop",
+  "block.rancher.wild_corn": "Wild Corn Crop",
+
   "itemGroup.rancher_tab": "Rancher's Manual"
 }

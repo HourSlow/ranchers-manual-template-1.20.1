@@ -23,5 +23,6 @@ public class RanchersManual implements ModInitializer {
 
         CompostingChanceRegistry.INSTANCE.add(ModItems.CORN, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(ModItems.CORN_SEEDS, 0.15f);
+        CompostingChanceRegistry.INSTANCE.add(ModBlocks.WILD_CORN, 0.2f);
 	}
 }

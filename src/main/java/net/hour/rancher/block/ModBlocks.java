@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.hour.rancher.RanchersManual;
 import net.hour.rancher.block.custom.CornCropBlock;
+import net.hour.rancher.block.custom.WildCropBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.piston.PistonBehavior;
@@ -18,6 +19,12 @@ public class ModBlocks {
     public static final Block CORN_CROP = Registry.register(Registries.BLOCK, new Identifier(RanchersManual.MOD_ID, "corn_crop"),
             new CornCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()
                     .breakInstantly().pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block WILD_CORN = registerBlock("wild_corn",
+            new WildCropBlock(FabricBlockSettings.copyOf(Blocks.GRASS).nonOpaque().noCollision()));
+
+
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

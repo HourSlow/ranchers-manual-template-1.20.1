@@ -18,8 +18,11 @@ public class ModModelProvidor extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         // blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLOCK);
-//
-        blockStateModelGenerator.registerCrop(ModBlocks.CORN_CROP, CornCropBlock.AGE, 0,1,2,3,4,5,6,7,8);
+        //blockStateModelGenerator.registerCrop(ModBlocks.CORN_CROP, CornCropBlock.AGE, 0,1,2,3,4,5,6,7,8);
+
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_CORN, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.CORN_CROP, BlockStateModelGenerator.TintType.NOT_TINTED,
+                CornCropBlock.AGE, 0,1,2,3,4,5,6,7,8);
     }
 
     @Override
