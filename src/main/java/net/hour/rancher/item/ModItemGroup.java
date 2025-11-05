@@ -20,6 +20,7 @@ public class ModItemGroup {
                         entries.add(ModItems.CORN);
                         entries.add(ModItems.CORN_SEEDS);
                         entries.add(ModItems.CORN_STEW);
+                        entries.add(ModItems.COOKED_CORN);
 
                     }).build());
 

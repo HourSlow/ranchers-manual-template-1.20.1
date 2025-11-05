@@ -7,6 +7,7 @@ import net.hour.rancher.item.ModItems;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.CriterionMerger;
+import net.minecraft.advancement.criterion.ConsumeItemCriterion;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -17,6 +18,8 @@ public class ModAdvancementProvidor extends FabricAdvancementProvider {
     public ModAdvancementProvidor(FabricDataOutput output) {
         super(output);
     }
+
+    //.criteriaMerger(CriterionMerger.OR)
 
     @Override
     public void generateAdvancement(Consumer<Advancement> consumer) {
@@ -33,9 +36,7 @@ public class ModAdvancementProvidor extends FabricAdvancementProvider {
                         false, // Announce to chat
                         true // Hidden until unlocked
                 )
-                .criterion("got_corn_root", InventoryChangedCriterion.Conditions.items(ModItems.CORN))
-                .criterion("got_corn_seeds_root", InventoryChangedCriterion.Conditions.items(ModItems.CORN_SEEDS))
-                .criteriaMerger(CriterionMerger.OR)
+                .criterion("consumed_something", ConsumeItemCriterion.Conditions.any())
                 .build(consumer, "root");
 
 
@@ -77,15 +78,15 @@ public class ModAdvancementProvidor extends FabricAdvancementProvider {
 
                         ModItems.TOAST,
                         Text.literal("Breakfast Time!"),
-                        Text.literal("Obtain a fried egg, toast and orange juice."),
+                        Text.literal("Eat a fried egg and a piece of toast."),
                         null,
                         AdvancementFrame.TASK,
                         true,
                         true,
-                        true
+                        false
                 )
-                .criterion("got_egg", InventoryChangedCriterion.Conditions.items(ModItems.FRIED_EGG))
-                .criterion("got_toast", InventoryChangedCriterion.Conditions.items(ModItems.TOAST))
+                .criterion("ate_egg", ConsumeItemCriterion.Conditions.item(ModItems.FRIED_EGG))
+                .criterion("ate_toast", ConsumeItemCriterion.Conditions.item(ModItems.TOAST))
                 .build(consumer, "full_breakfast");
     }
 }

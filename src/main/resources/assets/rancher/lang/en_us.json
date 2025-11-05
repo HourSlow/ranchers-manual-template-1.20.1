@@ -3,11 +3,14 @@
   "item.rancher.fried_egg": "Fried Egg",
 
   "item.rancher.corn": "Corn",
+  "item.rancher.cooked_corn": "Corn on the Cob",
   "item.rancher.corn_seeds": "Corn Seeds",
   "item.rancher.corn_stew": "Corn Stew",
 
   "block.rancher.corn": "Corn Crop",
   "block.rancher.wild_corn": "Wild Corn Crop",
+
+  "effect.rancher.warmth": "Warmth",
 
   "itemGroup.rancher_tab": "Rancher's Manual"
 }

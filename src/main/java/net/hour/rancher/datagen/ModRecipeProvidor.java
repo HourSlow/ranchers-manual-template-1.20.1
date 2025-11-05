@@ -17,6 +17,8 @@ import java.util.function.Consumer;
 public class ModRecipeProvidor extends FabricRecipeProvider {
 
     private static final List<ItemConvertible> LIST_EGGS = List.of(Items.EGG);
+    private static final List<ItemConvertible> LIST_CORN = List.of(ModItems.CORN);
+    private static final List<ItemConvertible> LIST_BREAD = List.of(Items.BREAD);
 
     public ModRecipeProvidor(FabricDataOutput output) {
         super(output);
@@ -25,9 +27,13 @@ public class ModRecipeProvidor extends FabricRecipeProvider {
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING,70, Items.BREAD, ModItems.TOAST, 0.2f);
+        offerSmelting(exporter, LIST_BREAD, RecipeCategory.FOOD, ModItems.TOAST, 0.2f, 70, "rancher");
 
         offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING,90, Items.EGG, ModItems.FRIED_EGG, 0.2f);
         offerSmelting(exporter, LIST_EGGS, RecipeCategory.FOOD, ModItems.FRIED_EGG, 0.2f, 90, "rancher");
+
+        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING,90, ModItems.CORN, ModItems.COOKED_CORN, 0.2f);
+        offerSmelting(exporter, LIST_CORN, RecipeCategory.FOOD, ModItems.COOKED_CORN, 0.2f, 90, "rancher");
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.CORN_STEW, 1)
                 .pattern("CCC")

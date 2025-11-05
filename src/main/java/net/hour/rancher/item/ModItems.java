@@ -25,6 +25,9 @@ public class ModItems {
     public static final Item CORN = registerItem("corn",
             new Item(new FabricItemSettings().food(ModFoodComponents.CORN_UNPROCESSED)));
 
+    public static final Item COOKED_CORN = registerItem("cooked_corn",
+            new Item(new FabricItemSettings().food(ModFoodComponents.CORN_PROCESSED)));
+
     public static final Item CORN_STEW = registerItem("corn_stew",
             new StewItem(new FabricItemSettings().food(ModFoodComponents.CORN_PROCESSED)));
 
