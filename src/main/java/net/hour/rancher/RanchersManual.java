@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.hour.rancher.block.ModBlocks;
 import net.hour.rancher.item.ModItemGroup;
 import net.hour.rancher.item.ModItems;
+import net.hour.rancher.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +19,8 @@ public class RanchersManual implements ModInitializer {
 	public void onInitialize() {
         ModItems.registerModItems();
         ModItemGroup.registerItemGroup();
+
+        ModWorldGeneration.generateModWorldGen();
 
         ModBlocks.registerModBlocks();
 
